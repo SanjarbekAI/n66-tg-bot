@@ -4,18 +4,20 @@ from asyncio import run
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 
-from core.config import TOKEN
+from core.config import TOKEN, DEVELOPER
 from core.table_queries import initializing_tables
-from routers import common, register
+from routers import common, register, feedback, backs
+from utils.commands import set_my_commands
 
 
 async def startup(bot: Bot):
     initializing_tables()
-    await bot.send_message(text="Bot start to work", chat_id=1358470521)
+    await set_my_commands(bot)
+    await bot.send_message(text="Bot start to work", chat_id=DEVELOPER)
 
 
 async def shutdown(bot: Bot):
-    await bot.send_message(text="Bot stopped", chat_id=1358470521)
+    await bot.send_message(text="Bot stopped", chat_id=DEVELOPER)
 
 
 async def main():
@@ -24,6 +26,8 @@ async def main():
 
     dp.include_router(router=common.router)
     dp.include_router(router=register.router)
+    dp.include_router(router=feedback.router)
+    dp.include_router(router=backs.router)
 
     dp.startup.register(startup)
     dp.shutdown.register(shutdown)

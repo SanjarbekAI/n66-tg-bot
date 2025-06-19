@@ -13,6 +13,7 @@ DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
 
 TOKEN = os.getenv("TOKEN")
+DEVELOPER = 1358470521
 
 DB_CONFIG = {
     "database": DB_NAME,

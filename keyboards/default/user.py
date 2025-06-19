@@ -27,3 +27,9 @@ user_main_menu = ReplyKeyboardMarkup(
         ]
     ], resize_keyboard=True
 )
+
+back_user_main_menu = ReplyKeyboardMarkup(
+    keyboard=[[
+        KeyboardButton(text="Back ⬅️")
+    ]], resize_keyboard=True
+)
