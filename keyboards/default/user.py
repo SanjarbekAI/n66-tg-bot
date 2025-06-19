@@ -15,10 +15,10 @@ location_share = ReplyKeyboardMarkup(
 user_main_menu = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="Manu 🍴")
+            KeyboardButton(text="Menu 🍴")
         ],
         [
-            KeyboardButton(text="Basket 🗑"),
+            KeyboardButton(text="Basket 🛒"),
             KeyboardButton(text="My orders 📝")
         ],
         [
